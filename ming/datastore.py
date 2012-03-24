@@ -5,6 +5,7 @@ import logging
 from threading import Lock
 
 from pymongo.connection import Connection
+from pymongo import pool
 from pymongo.master_slave_connection import MasterSlaveConnection
 
 from . import mim
@@ -19,11 +20,13 @@ class Engine(object):
         self._lock = Lock()
         self._connect_retry = connect_retry
         self._connect_args = connect_args
+        self.ConnectionClass = Connection
         if use_gevent:
-            from . import async
-            self.ConnectionClass = async.AsyncConnection
-        else:
-            self.ConnectionClass = Connection
+            if hasattr(pool, 'have_greenlet'):
+                self._connect_args['use_greenlets'] = True
+            else:
+                from . import async
+                self.ConnectionClass = async.AsyncConnection
         self.configure(master, slave)
 
     def __repr__(self):
