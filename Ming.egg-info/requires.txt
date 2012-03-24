@@ -1,0 +1,7 @@
+FormEncode >= 1.2.1
+pymongo>=2.0
+PasteScript
+WebOb
+mock >=0.8.0
+nose
+webtest

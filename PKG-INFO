@@ -1,0 +1,19 @@
+Metadata-Version: 1.0
+Name: Ming
+Version: 0.3.1dev-20120322
+Summary: Bringing order to Mongo since 2009
+Home-page: http://merciless.sourceforge.net
+Author: Rick Copeland
+Author-email: rick@geek.net
+License: MIT
+Description: Database mapping layer for MongoDB on Python. Includes schema enforcement and some facilities for schema migration. 
+        
+Keywords: mongo,pymongo
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
